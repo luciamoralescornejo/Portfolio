@@ -9,10 +9,10 @@
   --accent: #db4a2b;
   --card-bg: #fbf5e9;
   --card-small-bg: #ffffff;
-  --shadow: rgba(0,0,0,0.12);
-  --shadow-hover: rgba(0,0,0,0.18);
-  --shadow-small: rgba(0,0,0,0.1);
-  --shadow-small-hover: rgba(0,0,0,0.15);
+  --shadow: rgba(0, 0, 0, 0.12);
+  --shadow-hover: rgba(0, 0, 0, 0.18);
+  --shadow-small: rgba(0, 0, 0, 0.1);
+  --shadow-small-hover: rgba(0, 0, 0, 0.15);
 }
 
 .dark-mode {
@@ -22,10 +22,10 @@
   --accent: #ff7a5c;
   --card-bg: #2a2421;
   --card-small-bg: #332c28;
-  --shadow: rgba(0,0,0,0.55);
-  --shadow-hover: rgba(0,0,0,0.7);
-  --shadow-small: rgba(0,0,0,0.65);
-  --shadow-small-hover: rgba(0,0,0,0.8);
+  --shadow: rgba(0, 0, 0, 0.55);
+  --shadow-hover: rgba(0, 0, 0, 0.7);
+  --shadow-small: rgba(0, 0, 0, 0.65);
+  --shadow-small-hover: rgba(0, 0, 0, 0.8);
 }
 
 /* ---------------------------
@@ -389,11 +389,23 @@ a:active {
 
 @media (max-width: 768px) {
 
-  /* 🔥 Corrección del desbordamiento en la primera tarjeta */
+  /* Hace que la primera tarjeta tenga el mismo margen y ancho que el resto */
   .hero-card {
-    flex-direction: column-reverse;
-    text-align: center;
+    padding: 1.5rem 1rem;
     width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Evita que el contenido se pegue a los lados */
+  .hero .card {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* Asegura que la tarjeta no ocupe toda la pantalla en móviles */
+  .hero .card {
+    border-radius: 16px;
+    padding: 1.8rem 1.2rem;
   }
 
   .hero-left {
