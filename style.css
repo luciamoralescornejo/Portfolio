@@ -389,15 +389,13 @@ a:active {
 
 @media (max-width: 768px) {
 
-  /* 🔥 La tarjeta principal vuelve a ser vertical */
+  /* 🔥 Corrección del desbordamiento en la primera tarjeta */
   .hero-card {
     flex-direction: column-reverse;
     text-align: center;
-    padding: 1.5rem 1rem; 
-    gap: 1.5rem;
+    width: 100%;
   }
 
-  /* Evita que se salga del ancho */
   .hero-left {
     width: 100%;
   }
@@ -408,37 +406,25 @@ a:active {
     line-height: 1.4;
   }
 
-  /* Centrar botones y permitir salto */
+  /* Botones más pequeños en móvil */
+  .btn {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  /* Permite que los botones se acomoden sin romper diseño */
   .cta-row {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.6rem;
   }
 
-  /* Botones un poco más pequeños */
-  .btn {
-    padding: 0.45rem 0.9rem;
-    font-size: 0.9rem;
-  }
-
-  /* Ocultamos menú en móvil */
   .main-nav {
     display: none;
-  }
-
-  /* Cabecera ordenada */
-  .header-inner {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .brand {
-    max-width: 75%;
   }
 
   .avatar {
     width: 180px;
     height: 180px;
   }
-
 }
