@@ -389,50 +389,39 @@ a:active {
 
 @media (max-width: 768px) {
 
-  /* Hace que la primera tarjeta tenga el mismo margen y ancho que el resto */
-  .hero-card {
-    padding: 1.5rem 1rem;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* Evita que el contenido se pegue a los lados */
+  /* Asegura que la tarjeta principal se comporte igual que las otras */
   .hero .card {
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  /* Asegura que la tarjeta no ocupe toda la pantalla en móviles */
-  .hero .card {
-    border-radius: 16px;
+    margin: 1rem auto;
     padding: 1.8rem 1.2rem;
+    border-radius: 16px;
   }
 
-  .hero-left {
+  /* Arregla la estructura interna que estaba ensanchando la tarjeta */
+  .hero-card {
+    flex-direction: column;   /* Imagen encima del texto */
+    align-items: center;      /* Centrado */
     width: 100%;
+    gap: 1.2rem;
   }
 
+  /* Mantiene el texto controlado */
   .subtitle {
     max-width: 100%;
-    word-wrap: break-word;
+    text-align: center;
     line-height: 1.4;
   }
 
-  /* Botones más pequeños en móvil */
-  .btn {
-    padding: 0.45rem 0.8rem;
-    font-size: 0.85rem;
-  }
-
-  /* Permite que los botones se acomoden sin romper diseño */
+  /* Botones adaptados */
   .cta-row {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.6rem;
+    gap: 0.7rem;
   }
 
-  .main-nav {
-    display: none;
+  .btn {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
   }
 
   .avatar {
