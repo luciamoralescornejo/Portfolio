@@ -387,41 +387,52 @@ a:active {
    Responsivo (adaptación móvil)
 ---------------------------- */
 
-@media (max-width: 768px) {
+media (max-width: 768px) {
 
-  /* Asegura que la tarjeta principal se comporte igual que las otras */
-  .hero .card {
-    margin: 1rem auto;
-    padding: 1.8rem 1.2rem;
-    border-radius: 16px;
-  }
-
-  /* Arregla la estructura interna que estaba ensanchando la tarjeta */
+  /* Hace que la primera tarjeta tenga el mismo margen y ancho que el resto */
   .hero-card {
-    flex-direction: column;   /* Imagen encima del texto */
-    align-items: center;      /* Centrado */
+    padding: 1.5rem 1rem;
     width: 100%;
-    gap: 1.2rem;
+    box-sizing: border-box;
   }
 
-  /* Mantiene el texto controlado */
+  /* Evita que el contenido se pegue a los lados */
+  .hero .card {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* Asegura que la tarjeta no ocupe toda la pantalla en móviles */
+  .hero .card {
+    border-radius: 16px;
+    padding: 1.8rem 1.2rem;
+  }
+
+  .hero-left {
+    width: 100%;
+  }
+
   .subtitle {
     max-width: 100%;
-    text-align: center;
+    word-wrap: break-word;
     line-height: 1.4;
   }
 
-  /* Botones adaptados */
-  .cta-row {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.7rem;
-  }
-
+  /* Botones más pequeños en móvil */
   .btn {
     padding: 0.45rem 0.8rem;
     font-size: 0.85rem;
-    white-space: nowrap;
+  }
+
+  /* Permite que los botones se acomoden sin romper diseño */
+  .cta-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .main-nav {
+    display: none;
   }
 
   .avatar {
