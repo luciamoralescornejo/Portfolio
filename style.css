@@ -389,30 +389,56 @@ a:active {
 
 @media (max-width: 768px) {
 
-  /* Oculta el menú para que no se rompa */
+  /* 🔥 La tarjeta principal vuelve a ser vertical */
+  .hero-card {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 1.5rem 1rem; 
+    gap: 1.5rem;
+  }
+
+  /* Evita que se salga del ancho */
+  .hero-left {
+    width: 100%;
+  }
+
+  .subtitle {
+    max-width: 100%;
+    word-wrap: break-word;
+    line-height: 1.4;
+  }
+
+  /* Centrar botones y permitir salto */
+  .cta-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  /* Botones un poco más pequeños */
+  .btn {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  /* Ocultamos menú en móvil */
   .main-nav {
     display: none;
   }
 
-  /* Reajusta la cabecera para que no se expanda */
+  /* Cabecera ordenada */
   .header-inner {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
   }
 
-  /* Evita que el nombre se baje a 3 líneas */
   .brand {
-    max-width: 70%;
+    max-width: 75%;
   }
 
-  .brand .name {
-    font-size: 1.2rem;
-    line-height: 1.1;
+  .avatar {
+    width: 180px;
+    height: 180px;
   }
 
-  /* Icono del modo oscuro más cerca */
-  .theme-toggle {
-    font-size: 1.3rem;
-  }
-
+}
