@@ -1,0 +1,430 @@
+/* ---------------------------
+   Variables de color
+---------------------------- */
+
+:root {
+  /* Modo claro */
+  --bg: #ffffff;
+  --text: #765750;
+  --accent: #db4a2b;
+  --card-bg: #fbf5e9;
+  --card-small-bg: #ffffff;
+  --shadow: rgba(0,0,0,0.12);
+  --shadow-hover: rgba(0,0,0,0.18);
+  --shadow-small: rgba(0,0,0,0.1);
+  --shadow-small-hover: rgba(0,0,0,0.15);
+}
+
+.dark-mode {
+  /* Modo oscuro */
+  --bg: #1f1a17;
+  --text: #e7dfd7;
+  --accent: #ff7a5c;
+  --card-bg: #2a2421;
+  --card-small-bg: #332c28;
+  --shadow: rgba(0,0,0,0.55);
+  --shadow-hover: rgba(0,0,0,0.7);
+  --shadow-small: rgba(0,0,0,0.65);
+  --shadow-small-hover: rgba(0,0,0,0.8);
+}
+
+/* ---------------------------
+   Estilos generales
+---------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Aileron', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Contenedor principal */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---------------------------
+   Encabezado y navegación
+---------------------------- */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg);
+  box-shadow: 0 2px 8px var(--shadow);
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.brand .name {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+
+.brand .lastname {
+  color: var(--text);
+}
+
+.brand .role {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.main-nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: var(--accent);
+}
+
+/* Botón modo oscuro */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--text);
+  margin-left: 1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+/* ---------------------------
+   Secciones principales
+---------------------------- */
+
+.section {
+  padding: 3rem 0 1.5rem;
+}
+
+.hero {
+  margin-top: 5rem;
+}
+
+/* Tarjetas beige con sombra */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 18px var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+/* ---------------------------
+   Hero / Inicio
+---------------------------- */
+
+.hero-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--text);
+}
+
+.subtitle {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.cta-row {
+  display: flex;
+  gap: 1rem;
+}
+
+/* ✨ BOTONES AJUSTADOS */
+.btn {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.btn i {
+  font-size: 0.95rem;
+}
+
+.btn.primary {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.btn.primary:hover {
+  background-color: #b63d24;
+}
+
+.btn.outline {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn.outline:hover {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+/* Imagen del perfil */
+.avatar {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+}
+
+/* ---------------------------
+   Secciones generales
+---------------------------- */
+
+.section-card {
+  margin-bottom: 2rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+.icon.accent {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+/* ---------------------------
+   Formación / Habilidades / Proyectos
+---------------------------- */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* Tarjetas pequeñas */
+.card-small {
+  background-color: var(--card-small-bg);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 3px 8px var(--shadow-small);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-small:hover {
+  box-shadow: 0 5px 14px var(--shadow-small-hover);
+  transform: translateY(-3px);
+}
+
+.card-small h4 {
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.subtle-title {
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.skills-list,
+.meta-list,
+.contact-list {
+  list-style: none;
+}
+
+.skills-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 1.5rem;
+}
+
+.skills-columns ul {
+  list-style: none;
+}
+
+.skills-columns li {
+  margin-bottom: 0.3rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.skills-columns li::before {
+  content: "•";
+  color: var(--accent);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.skills-list li,
+.meta-list li,
+.contact-list li {
+  margin-bottom: 0.3rem;
+}
+
+.skills-list li::before {
+  content: "• ";
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.muted {
+  font-size: 0.9rem;
+  color: #8d7f70;
+}
+
+/* ---------------------------
+   Enlaces globales
+---------------------------- */
+
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--text);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+a:visited {
+  color: var(--text);
+  text-decoration-color: var(--text);
+}
+
+a:active {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* ---------------------------
+   Contacto
+---------------------------- */
+
+.contact-list i {
+  margin-right: 0.4rem;
+  color: var(--accent);
+}
+
+/* ---------------------------
+   Footer
+---------------------------- */
+
+.site-footer {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: var(--card-bg);
+  margin-top: 3rem;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+/* ---------------------------
+   Responsivo (adaptación móvil)
+---------------------------- */
+
+@media (max-width: 768px) {
+
+  /* 🔥 Corrección del desbordamiento en la primera tarjeta */
+  .hero-card {
+    flex-direction: column-reverse;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-left {
+    width: 100%;
+  }
+
+  .subtitle {
+    max-width: 100%;
+    word-wrap: break-word;
+    line-height: 1.4;
+  }
+
+  /* Botones más pequeños en móvil */
+  .btn {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  /* Permite que los botones se acomoden sin romper diseño */
+  .cta-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .avatar {
+    width: 180px;
+    height: 180px;
+  }
+}
