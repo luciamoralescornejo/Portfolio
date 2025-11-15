@@ -384,47 +384,72 @@ a:active {
 }
 
 /* ---------------------------
-   Responsivo (adaptación móvil)
+   Adaptación a orientación vertical
 ---------------------------- */
+@media (orientation: portrait) {
 
-@media (max-width: 768px) {
-
-  /* 🔥 Corrección del desbordamiento en la primera tarjeta */
+  /* Mantener tu diseño actual */
   .hero-card {
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
-    width: 100%;
-  }
-
-  .hero-left {
-    width: 100%;
-  }
-
-  .subtitle {
-    max-width: 100%;
-    word-wrap: break-word;
-    line-height: 1.4;
-  }
-
-  /* Botones más pequeños en móvil */
-  .btn {
-    padding: 0.45rem 0.8rem;
-    font-size: 0.85rem;
-  }
-
-  /* Permite que los botones se acomoden sin romper diseño */
-  .cta-row {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.6rem;
-  }
-
-  .main-nav {
-    display: none;
   }
 
   .avatar {
     width: 180px;
     height: 180px;
+  }
+
+  .cta-row {
+    justify-content: center;
+  }
+}
+
+/* ---------------------------
+   Adaptación a orientación horizontal (móvil en landscape)
+---------------------------- */
+@media (orientation: landscape) and (max-width: 900px) {
+
+  /* Espaciado general */
+  .section {
+    padding: 2rem 0;
+  }
+
+  /* Hero más compacto */
+  .hero-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+  }
+
+  /* Reducir avatar para que no ocupe media pantalla */
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  /* Ajuste de botones */
+  .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  /* Ajuste de grids para que no queden demasiado altas */
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  /* Footer más compacto */
+  .site-footer {
+    padding: 1.2rem 0;
   }
 }
