@@ -386,24 +386,56 @@ a:active {
 /* ---------------------------
    Adaptación a orientación vertical
 ---------------------------- */
-@media (orientation: portrait) {
+@media (orientation: portrait) and (max-width: 768px) {
 
-  /* Mantener tu diseño actual */
+  /* La tarjeta principal del hero debe apilarse sí o sí  */
   .hero-card {
-    flex-direction: column;
+    flex-direction: column !important;
+    align-items: center;
     text-align: center;
+    gap: 1.5rem;
   }
 
-  .avatar {
-    width: 180px;
-    height: 180px;
+  /* El texto debe ocupar el 100% del ancho disponible */
+  .hero-card > * {
+    width: 100%;
   }
 
+  .title {
+    font-size: 1.7rem;
+    word-break: break-word;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  /* Botones: permitir que se ajusten y que nunca se salgan */
   .cta-row {
+    flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
+  }
+
+  .btn {
+    width: auto;
+    max-width: 100%;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Avatar más pequeño en vertical para que no empuje el texto */
+  .avatar {
+    width: 160px;
+    height: 160px;
+  }
+
+  /* Para evitar que la tarjeta se expanda demasiado */
+  .card {
+    padding: 1.5rem;
   }
 }
-
 /* ---------------------------
    Adaptación a orientación horizontal (móvil en landscape)
 ---------------------------- */
