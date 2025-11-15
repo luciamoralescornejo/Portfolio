@@ -386,56 +386,59 @@ a:active {
 /* ---------------------------
    Adaptación a orientación vertical
 ---------------------------- */
-@media (orientation: portrait) and (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
 
-  /* La tarjeta principal del hero debe apilarse sí o sí  */
+  /* Forzar layout vertical */
   .hero-card {
+    display: flex !important;
     flex-direction: column !important;
-    align-items: center;
-    text-align: center;
-    gap: 1.5rem;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1.5rem !important;
   }
 
-  /* El texto debe ocupar el 100% del ancho disponible */
+  /* Evitar que el texto se salga */
   .hero-card > * {
-    width: 100%;
+    width: 100% !important;
   }
 
   .title {
-    font-size: 1.7rem;
-    word-break: break-word;
+    font-size: 1.6rem !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
   }
 
-  /* Botones: permitir que se ajusten y que nunca se salgan */
+  /* Botones: permitir el salto de línea */
   .cta-row {
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.6rem !important;
   }
 
   .btn {
-    width: auto;
-    max-width: 100%;
-    text-align: center;
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.5rem 0.9rem !important;
+    font-size: 0.9rem !important;
+    white-space: nowrap !important;
   }
 
-  /* Avatar más pequeño en vertical para que no empuje el texto */
+  /* Reducir avatar para que no empuje */
   .avatar {
-    width: 160px;
-    height: 160px;
+    width: 150px !important;
+    height: 150px !important;
   }
 
-  /* Para evitar que la tarjeta se expanda demasiado */
+  /* La tarjeta no debe sobreexpandirse */
   .card {
-    padding: 1.5rem;
+    padding: 1.4rem !important;
   }
 }
+
 /* ---------------------------
    Adaptación a orientación horizontal (móvil en landscape)
 ---------------------------- */
