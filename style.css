@@ -57,7 +57,7 @@ body {
 }
 
 /* ---------------------------
-   Encabezado y navegación
+   Encabezado
 ---------------------------- */
 
 .site-header {
@@ -147,7 +147,7 @@ body {
 }
 
 /* ---------------------------
-   Hero / Inicio
+   Inicio
 ---------------------------- */
 
 .hero-card {
@@ -174,7 +174,7 @@ body {
   gap: 1rem;
 }
 
-/* ✨ BOTONES AJUSTADOS */
+/* Botones */
 .btn {
   text-decoration: none;
   font-weight: 600;
@@ -247,7 +247,7 @@ body {
 }
 
 /* ---------------------------
-   Formación / Habilidades / Proyectos
+   Formación, habilidades, proyectos
 ---------------------------- */
 
 .grid-2 {
@@ -384,12 +384,11 @@ a:active {
 }
 
 /* ---------------------------
-   Responsivo (adaptación móvil)
+   Adaptación móvil
 ---------------------------- */
 
 @media (max-width: 768px) {
-
-  /* 🔥 Corrección del desbordamiento en la primera tarjeta */
+   
   .hero-card {
     flex-direction: column-reverse;
     text-align: center;
